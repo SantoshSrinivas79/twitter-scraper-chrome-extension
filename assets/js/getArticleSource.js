@@ -31,7 +31,7 @@ if (!window.retrievePostData) {
             var imagesDom = element.querySelectorAll(
                 "[data-testid=tweetPhoto] img"
             );
-            var linkDom = element.querySelector("a[aria-label*=日]");
+            var linkDom = element.querySelector("a[role=link][href*=status]");
             var reachDom = element.querySelector("a[href$=analytics]");
             var videosDom = element.querySelectorAll(
                 "[data-testid=tweetPhoto] video"
@@ -67,6 +67,7 @@ if (!window.retrievePostData) {
                     video.push(videoDom.getAttribute("src"));
                 }
             }
+
             var data = {
                 time: timeDom ? timeDom.getAttribute("datetime") : "",
                 content: content,
